@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid black;
+            background-color: #f0f0f0;
+        }
+        p{
+            color: blue;
+        }
+        .important{
+            background-color: red;
+            color: white;
+        }
+        /* input[type="checkbox"]{
+            border: 4px solid green;
+        } */
+        input[type="checkbox"] {
+            accent-color: green;
+        }
+        #main-header{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .green-text{
+            color: #0a5314;
+        }
+        .semi-red{
+            color: rgba(255, 0, 0, 0.5);
+
+        }
+        .container{
+            margin: auto;
+            width: 80%;
+            background-color: #e0e0e0;
+            padding: 10px;
+        }
+        .container p{
+            font-size: 1.2em;
+        }
+        header{
+            height: 10vh;
+            background-color: #333;
+            color: white;
+        }
+        .btn{
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #466dec;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="main-header">Main Header</div>
+    </header>
+    <div class="container">
+    <div class="box">
+        I am div
+    </div>
+    <p>This is paragraph
+    </p>
+    <p class="important">
+        I am important
+    </p>
+    <label><input type="checkbox"> Option 1</label>
+    <label><input type="checkbox"> Option 2</label>
+     
+    <p class="green-text">THis is pure green using hex</p>
+    <p class="semi-red">This text is semi-transparent red using RGBA</p>
+    <button class="btn">Click me</button>
+    </div>
+</body>
+</html>

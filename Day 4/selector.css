@@ -1,0 +1,46 @@
+/* div selcetor */
+div{
+    color: red;
+    background-color: aquamarine;
+}
+/* class selector */
+.red{
+    background-color: brown;
+}
+/* Id selector */
+#green{
+    color: green;
+}
+
+/* Children Selector */
+/* Selects only the <p> elements that are direct children of a <div>. */
+div > p{
+    color: blue;
+}
+
+/* Descendent Selector */
+/* Selects all <p> elements that are anywhere inside a <div>, no matter how deep. */
+div p{
+    color: brown;
+}
+/* Universal selector */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Pseudo Selector */
+a:visited{
+    color: yellow;
+}
+a:link{
+    color: green;
+}
+a:active{
+    background-color: red;
+}
+a:hover{
+    background-color: blue;
+}
+p:first-child{
+    background-color: rgb(195, 0, 255);
+}
