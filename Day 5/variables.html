@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSS Variables</title>
+    <style>
+
+        :root{
+            --color: blue;
+            --seccolor: rgb(174, 174, 222);
+            --bgcolor:black;
+            --defpad: 23px;
+            --devop: 0.3;
+        }
+
+
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            background-color: var(--color);
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            opacity: var(--devop);
+            list-style: none;
+            padding: var(--defpad);
+            border: 2px solid var(--bgcolor);
+
+        }
+        ul li:first-child{
+            --color : red;
+            background-color: var(--color);
+        }
+        
+        .container{
+            background-color: var(--seccolor,blue);
+            /*  blue if the variable is not available */
+           
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+        </ul>
+    </div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, consequuntur. Dolore officiis fugit nihil vero? Est, atque rem deserunt omnis magni eaque ab quaerat aut labore numquam cumque quis vitae temporibus tenetur nisi placeat iure, repellat perferendis sed! Voluptates facilis at libero quis expedita alias.</p>
+    </div>
+</body>
+</html>

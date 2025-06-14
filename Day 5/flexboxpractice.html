@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox + Grid Practice</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    body{
+        font-family: cursive;
+        line-height: 1.6;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #333;
+        color: white;
+        padding: 20px;
+
+    }
+    nav a{
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+
+    }
+    main{
+        padding: 10px;
+    }
+    h2{
+        text-align: center;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .card{
+        width: 200px;
+        text-align: center;
+        background-color: #f4f4f4;
+        padding: 30px;
+        color: #a88686;
+        border: 1px solid #ccc;
+
+    }
+    .card:hover{
+        background-color: #ddd;
+        color: black;
+        cursor: pointer;
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        height: 60px;
+        align-items: center;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Flex + Grid Site</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gallery</h2>
+    <div class="container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+      <div class="card">Card 5</div>
+      <div class="card">Card 6</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+
+</body>
+</html>

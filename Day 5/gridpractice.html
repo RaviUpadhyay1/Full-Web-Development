@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: cursive;
+        }
+        header{
+            background-color: #333;
+            display: grid;
+            grid-template-columns: 400px 220px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            color: white;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        main{
+            margin: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            margin-top: 20px;
+            gap: 20px;
+            place-items: center;
+        }
+        .card{
+            width: 200px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #a88686;
+            padding: 30px;
+        }
+        footer{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Flex + Grid Site</h1>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+         <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Gallery</h2>
+        <div class="container">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ravi Upadhyay </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS </title>
+    <style>
+        /* .box:first-child{
+            background-color: red;
+        } */
+        /* .box::first-line{
+            color: yellow;
+        } */
+        /* .boxes *{
+            color: blue;
+            border: 2px solid black;
+        } */
+        /* p,a,.box,[data-color="primary"]{
+            padding-top: 40px;
+        } */
+        /* .box:nth-last-child(1){
+            background-color: red;
+        } */
+
+        .boxes::before{
+            content: "Ravi is good";
+            color: red;
+        }
+
+        .boxes::after{
+            content: "Web development";
+            color: blue;
+        }
+
+        ::selection{
+            color: green;
+            background-color: rgb(143, 168, 164);
+        }
+
+        .box::first-letter{
+            color: brown;
+            font-size: 100px;
+        }
+        input::placeholder{
+            color: blue;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque officia, maiores, nisi dolorem possimus quas non mollitia veritatis aperiam ipsam numquam? Aperiam, cumque praesentium vero aliquam quod consequatur facere quisquam modi ipsa obcaecati dignissimos voluptatum vel ipsum sit fugit nulla odit adipisci temporibus at! Ad temporibus rerum repudiandae excepturi libero quaerat dolorem provident dolor. Ad nesciunt laudantium iste delectus libero repellendus quam quaerat, ipsam distinctio saepe in aliquam adipisci temporibus error alias inventore corporis amet suscipit, placeat odio numquam similique laborum! Hic ratione id reiciendis fuga similique, saepe quae omnis architecto ducimus nisi adipisci corrupti accusantium quia magnam possimus laudantium.</div>
+        <div class="box">I am a box</div>
+        <div class="box">I am a box</div>
+        <input type="text" placeholder="enter your name">
+    </div>
+</body>
+</html>
