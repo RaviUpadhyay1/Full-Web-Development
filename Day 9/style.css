@@ -17,6 +17,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
+    flex-wrap: wrap;
 }
 header h1{
     font-size: 1.8rem;
@@ -31,14 +32,41 @@ nav a:hover{
     text-decoration: underline;
     color: #1abc9c
 }
-.bloglist{
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.blog-list{
     display: flex;
     flex: 3;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 1rem;
+}
+.blog-card{
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+}
+.blog-card:hover {
+  transform: translateY(-5px);
 }
 aside{
+    background-color: white;
     flex: 1;
+    margin-right: 2rem;
+    padding: 1rem;
     border-radius: 8px;
-
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+footer{
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: #555;
 }

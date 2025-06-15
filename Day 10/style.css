@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: cursive;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+
+}
+body.dark {
+    background: #121212;
+    color: #f0f0f0;
+}
+body.dark header,
+body.dark footer,
+body.dark article,
+body.dark aside,
+body.dark p{
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark #theme-toggle {
+    background: #333;
+}
+header{
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    flex-wrap: wrap;
+}
+header h1{
+    font-size: 1.8rem;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-left:3rem;
+    transition: color 0.5s;
+}
+nav a:hover{
+    text-decoration: underline;
+    color: #1abc9c
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.blog-list{
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+.blog-card{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+    
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 0.5rem;
+
+}
+.image{
+    width: 120px;
+    height: 150px;
+    border-radius: 8px;
+    margin-right: 1.5rem;
+
+
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+
+}
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+p{
+    font-size: 1rem;
+    color: #555;
+}
+time{
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+aside{
+    background-color: white;
+    flex: 1;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+footer{
+    background-color: white;
+    padding: 1rem 4rem;
+    color: #333;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    main {
+        flex-direction: column;
+    }
+    .blog-list, aside {
+        width: 100%;
+    }
+    .blog-card {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    
+}
