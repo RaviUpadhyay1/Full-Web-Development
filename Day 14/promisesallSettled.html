@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promp1 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was supporting you 1")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Task 1 done")
+                    resolve("Ravi")
+                }, 1000);
+            }
+        })
+        let promp2 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was supporting you 2")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Task 2 done")
+                    resolve("Ravi 2")
+                }, 1000);
+            }
+        })
+        let p3 = Promise.allSettled([promp1, promp2]);
+        p3.then((a)=>{
+            console.log("Result:",a)
+        }).catch((err)=>{
+            console.log("Error:",err)
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>Promise.allSettled Example</title></head>
+<body>
+<script>
+    let prom1 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+            reject("❌ prom1 failed");
+        } else {
+            setTimeout(() => {
+                console.log("✅ prom1 done");
+                resolve("🎉 prom1 success");
+            }, 1000);
+        }
+    });
+
+    let prom2 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+            reject("❌ prom2 failed");
+        } else {
+            setTimeout(() => {
+                console.log("✅ prom2 done");
+                resolve("🎉 prom2 success");
+            }, 1500);
+        }
+    });
+
+    Promise.allSettled([prom1, prom2]).then((results) => {
+        results.forEach((result, index) => {
+            if (result.status === "fulfilled") {
+                console.log(`✅ Promise ${index + 1} succeeded:`, result.value);
+            } else {
+                console.error(`❌ Promise ${index + 1} failed:`, result.reason);
+            }
+        });
+    });
+</script>
+</body>
+</html> -->

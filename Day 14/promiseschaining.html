@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promp1 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was supporting you")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Task 1");
+                    resolve("Step 1 Complete");
+                }, 1000);
+            }
+        });
+
+        promp1
+            .then((res1) => {
+                console.log(res1); // "Step 1 Complete"
+                return "Step 2 Started";
+            })
+            .then((res2) => {
+                console.log(res2); // "Step 2 Started"
+                return "Step 3 Final";
+            })
+            .then((res3) => {
+                console.log(res3); // "Step 3 Final"
+            })
+            .catch((err) => {
+                console.log("Something went wrong:", err);
+                // console.error("Something went wrong:", err);  //It shows error
+            });
+
+    </script>
+</body>
+
+</html>

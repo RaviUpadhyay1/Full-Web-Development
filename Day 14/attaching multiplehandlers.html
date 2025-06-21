@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><title>Multiple Promise Handlers</title></head>
+<body>
+<script>
+    let promp1 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+            reject("❌ No random number was supporting you");
+        } else {
+            setTimeout(() => {
+                console.log("✅ Task done");
+                resolve("🎉 Ravi");
+            }, 1000);
+        }
+    });
+
+    // Independent then handlers
+    promp1.then((value) => {
+        console.log("Handler 1:", value);
+    });
+
+    promp1.then((value) => {
+        console.log("Handler 2:", value.toUpperCase());
+    });
+
+    // Chained handler
+    promp1
+        .then((value) => {
+            console.log("Chain 1:", value);
+            return value + " -> step 1";
+        })
+        .then((value) => {
+            console.log("Chain 2:", value);
+        });
+
+    // Multiple catch
+    promp1.catch((err) => {
+        console.log("Catch #1:", err);
+    });
+
+    promp1.catch((err) => {
+        console.log("Catch #2:", err);
+    });
+
+    promp1.finally(() => {
+        console.log("This runs no matter what");
+    });
+</script>
+</body>
+</html>

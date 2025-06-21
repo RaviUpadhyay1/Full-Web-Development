@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fn = () => {
+    console.log("nothing");
+}
+
+const callback = (arg, fn) => {
+    console.log(arg);
+    fn();
+}
+
+const errorCallback = (error) => {
+    console.error("Failed to load script:", error);
+}
+
+const loadScript = (src, successCallback, errorCallback) => {
+    let sc = document.createElement("script");
+    sc.src = src;
+
+    sc.onload = () => successCallback("Ravi", fn);
+    sc.onerror = (e) => errorCallback(e);  // Error handling
+
+    document.head.append(sc);
+}
+
+loadScript(
+    "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", // Try invalid URL to test
+    callback,
+    errorCallback
+);
+
+    </script>
+</body>
+</html>

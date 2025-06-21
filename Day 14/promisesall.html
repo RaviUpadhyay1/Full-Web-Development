@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promp1 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was supporting you 1")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Task 1 done")
+                    resolve("Ravi")
+                }, 1000);
+            }
+        })
+        let promp2 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was supporting you 2")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Task 2 done")
+                    resolve("Ravi 2")
+                }, 1000);
+            }
+        })
+        let p3 = Promise.all([promp1, promp2]);
+        p3.then((a)=>{
+            console.log("Result:",a)
+        }).catch((err)=>{
+            console.log("Error:",err)
+        })
+
+    </script>
+</body>
+
+</html>
