@@ -14,6 +14,7 @@ console.log(document.querySelector(".container").children[1]);
 console.log(document.querySelector(".box").textContent)
 // console.log(document.querySelector(".box").hidden = true)
 console.log(document.querySelector(".box").innerHTML="Hey I am your boss")
+console.log(document.querySelector(".box").innerTex="Hey I am your Ravi boss")
 
 console.log(document.querySelector(".box").hasAttribute("style"))
 console.log(document.querySelector(".box").getAttribute("style"))
