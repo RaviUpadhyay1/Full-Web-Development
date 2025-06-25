@@ -1,5 +1,5 @@
-let obj = {
-    a:1,
-    b:"Ravi"
+class Animal{
+    constructor(){
+        console.log("Object is created..")
+    }
 }
-console.log(obj)
