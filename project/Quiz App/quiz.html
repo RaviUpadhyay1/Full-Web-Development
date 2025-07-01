@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App with API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            text-align: left;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #next-btn {
+            display: none;
+            width: 80px;
+            /* or any small width you want */
+            max-width: none;
+            /* make sure no max-width is limiting */
+            text-align: center;
+            margin: 10px auto;
+            /* center horizontally */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h2 id="question">Loading question...</h2>
+        <div id="answer-buttons"></div>
+        <button id="next-btn" class="btn">Next</button>
+    </div>
+
+    <script>
+        const questionEl = document.getElementById("question");
+        const answerButtons = document.getElementById("answer-buttons");
+        const nextBtn = document.getElementById("next-btn");
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let questions = [];
+
+        async function getQuestions() {
+            const response = await fetch("https://opentdb.com/api.php?amount=5&type=multiple");
+            const data = await response.json();
+            return data.results;
+        }
+
+        async function startQuiz() {
+            questions = await getQuestions();
+            currentQuestionIndex = 0;
+            score = 0;
+            nextBtn.innerHTML = "Next";
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            let q = questions[currentQuestionIndex];
+            let answers = [...q.incorrect_answers];
+            let correctIndex = Math.floor(Math.random() * 4);
+            answers.splice(correctIndex, 0, q.correct_answer);
+
+            questionEl.innerHTML = decodeHTMLEntities(q.question);
+
+            answers.forEach(answer => {
+                const btn = document.createElement("button");
+                btn.innerHTML = decodeHTMLEntities(answer);
+                btn.classList.add("btn");
+                if (answer === q.correct_answer) {
+                    btn.dataset.correct = "true";
+                }
+                btn.addEventListener("click", selectAnswer);
+                answerButtons.appendChild(btn);
+            });
+        }
+
+        function resetState() {
+            nextBtn.style.display = "none";
+            answerButtons.innerHTML = "";
+        }
+
+        function selectAnswer(e) {
+            const selectedBtn = e.target;
+            const isCorrect = selectedBtn.dataset.correct === "true";
+            if (isCorrect) {
+                selectedBtn.style.background = "green";
+                score++;
+            } else {
+                selectedBtn.style.background = "red";
+            }
+            Array.from(answerButtons.children).forEach(button => {
+                if (button.dataset.correct === "true") {
+                    button.style.background = "green";
+                }
+                button.disabled = true;
+            });
+            nextBtn.style.display = "block";
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showScore();
+            }
+        });
+
+        function showScore() {
+            resetState();
+            questionEl.innerHTML = `You scored ${score} out of ${questions.length}!`;
+            nextBtn.innerHTML = "Play Again";
+            nextBtn.style.display = "block";
+        }
+
+        function decodeHTMLEntities(text) {
+            const txt = document.createElement("textarea");
+            txt.innerHTML = text;
+            return txt.value;
+        }
+
+        startQuiz();
+    </script>
+</body>
+
+</html>
