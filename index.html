@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Joke Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to right,
+                    #3494E6, #EC6EAD);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .app-title {
+            color: #4CAF50;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .joke-container {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            width: 60%;
+            height: 60%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .laugh-icon,
+        .random-icon,
+        .copy-icon {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        #jokeText {
+            font-size: 18px;
+            color: #555;
+            margin: 20px 10px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background: #FF4848;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 10px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #FF6565;
+        }
+
+        @media screen and (max-width: 600px) {
+            .joke-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="joke-container animate__animated animate__fadeIn">
+            <h1 class="app-title">GeeksforGeeks Joke Generator</h1>
+            <i class="laugh-icon"></i>
+            <p id="jokeText">Loading joke...</p>
+            <button id="newJokeBtn"><i class="random-icon">
+                </i> New Joke</button>
+            <button id="copyJokeBtn"><i class="copy-icon">
+                </i> Copy Joke</button>
+        </div>
+    </div>
+    <script>
+        const joke = document.getElementById('jokeText');
+        const jokeBtn = document.getElementById('newJokeBtn');
+        const cpyBtn = document.getElementById('copyJokeBtn');
+        jokeBtn.addEventListener('click', jokeFn);
+        cpyBtn.addEventListener('click', cpyFn);
+        jokeFn();
+        function jokeFn() {
+            fetch('...')
+                .then(response => response.json())
+                .then(data => {
+                    joke.textContent = data.joke;
+                })
+                .catch(error => {
+                    console.error('Error fetching joke:', error);
+                    joke.textContent = 'Failed to fetch joke. Please try again.';
+                });
+        }
+        function cpyFn() {
+            const textArea = document.createElement('textarea');
+            textArea.value = joke.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Joke copied to clipboard!');
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .star {
+            font-size: 2rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star:hover,
+        .star.hovered,
+        .star.selected {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="star-rating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+    </div>
+    <p id="rating-value">Rating: 0</p>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backdrop Blur Example</title>
+  <style>
+    /* Background setup */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://picsum.photos/800/600') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Glass effect box */
+    .glass {
+      width: 300px;
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+      backdrop-filter: blur(10px);       
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass">
+    <h2>Frosted Glass UI</h2>
+    <p>This is using <code>backdrop-filter: blur(10px);</code></p>
+  </div>
+
+</body>
+</html>
