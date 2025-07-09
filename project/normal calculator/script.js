@@ -32,3 +32,4 @@ squareRoot=()=>{
         display.innerText="Error"
     }
 }
+
