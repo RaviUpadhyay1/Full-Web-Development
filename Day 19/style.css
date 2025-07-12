@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.item {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  /* //All items grow equally */
+  /* flex-grow: 1;          */
+  min-width: 100px;     /* Minimum width */
+
+  
+}
+
+.item1{
+    flex-basis: 300px;
+    /* flex-grow: 1; */
+    flex-shrink: 0;
+}
+.item2{
+    flex-basis: 200px;
+    /* flex-grow: 1; */
+    flex-shrink: 1;
+}
