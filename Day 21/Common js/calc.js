@@ -1,3 +1,4 @@
+// common js
 // ✅ 1. Destructuring Import (Object Destructuring)
 const {add,sub,div,mul} = require('./math')
 console.log(add(4,2))

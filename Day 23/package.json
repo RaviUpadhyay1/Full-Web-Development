@@ -1,7 +1,7 @@
 {
-  "name": "day-21",
+  "name": "day-23",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "ravi.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -8,8 +8,8 @@
 // main.js
 
 
-// import obj from './mymodule.js';
-// console.log(obj);  // Output: { x: 5, y: 7 }
+import obj from './mymodule.js';
+console.log(obj);  // Output: { x: 5, y: 7 }
 
 
 // (function(exports,require,module,__filename,__dirname){
@@ -20,5 +20,5 @@
 
 
 
-const a = require("./mymodule2.js")
-console.log(a,__dirname,__filename)
+// const a = require("./mymodule2.js")
+// console.log(a,__dirname,__filename)
