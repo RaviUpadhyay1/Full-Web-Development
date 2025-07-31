@@ -1,0 +1,23 @@
+<!-- This is include which include the header -->
+<% include (partials/header.ejs') %>
+
+<h1>Welcome Page</h1>
+
+<!-- 1. <%= %> — Escape HTML -->
+<p>Hello, <%= user.name %>!</p>
+
+<!-- 2. <%- %> — Raw HTML -->
+<div>About: <%- bio %></div>
+
+<!-- 3. <% %> — Logic -->
+<% if (user.name.includes('Ravi')) { %>
+  <p>✅ You are logged in as Ravi</p>
+<% } else { %>
+  <p>❌ You are not Ravi</p>
+<% } %>
+
+<!-- 4. <% include %> — Done at top -->
+
+<footer>
+  <p>© 2025 Ravi Upadhyay</p>
+</footer>
