@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign Our Guestbook</h1>
+        <form action="/sign" method="POST">
+            <input type="text" name="name" placeholder="Yourname" required><br /><br />
+            <textarea name="message" placeholder="Your message"></textarea><br/><br/>
+            <button type="submit">Sign</button>
+        </form>
+        <a href="/guests">View Guestbook Entries</a>
+
+    </div>
+
+</body>
+
+</html>
